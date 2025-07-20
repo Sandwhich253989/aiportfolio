@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "b0577990-2f93-4e24-9f15-76340cf86071",
+		"name": "RAG - aiportfolio",
+		"description": "RAG - aiportfolio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36236984"
+	},
+	"item": [
+		{
+			"name": "display all files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/display/display-all-files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"display",
+						"display-all-files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve file details from database with index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/display/retrieve-file?index=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"display",
+						"retrieve-file"
+					],
+					"query": [
+						{
+							"key": "index",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate answer from question and ref id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/generate-answer/32105a86-8507-4312-875e-702639531485/?question=\"what does this dataset talk abt\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"generate-answer",
+						"32105a86-8507-4312-875e-702639531485",
+						""
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "\"what does this dataset talk abt\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload web link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"lliam Github\",\r\n    \"data\": \"https://lilianweng.github.io/posts/2023-06-23-agent/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/rag/upload/link/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"upload",
+						"link",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload files",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "hr",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/avane/Downloads/hr_with_ids.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/rag/upload/file/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"upload",
+						"file",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete entry from db using index",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/db/delete-entry-from-db/?index=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"db",
+						"delete-entry-from-db",
+						""
+					],
+					"query": [
+						{
+							"key": "index",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset db",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/db/reset-db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"db",
+						"reset-db"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "feedback analysis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/generate-answer/a7f6ccbf-1a98-4d64-9b60-46ef0fa2af7e/?question=\"Do you see a pattern with the delays in the flight with the route where it goes?\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"generate-answer",
+						"a7f6ccbf-1a98-4d64-9b60-46ef0fa2af7e",
+						""
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "\"Do you see a pattern with the delays in the flight with the route where it goes?\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sentiment analysis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/rag/generate-answer/a7f6ccbf-1a98-4d64-9b60-46ef0fa2af7e/?question=\"Can you group the reviews into categories based on the context they are tweeting about and understand if they will use the service again or not\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rag",
+						"generate-answer",
+						"a7f6ccbf-1a98-4d64-9b60-46ef0fa2af7e",
+						""
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "\"Can you group the reviews into categories based on the context they are tweeting about and understand if they will use the service again or not\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload fine-tuning files",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    const responseData = xml2Json(pm.response.text());\r",
+							"    \r",
+							"    pm.expect(responseData).to.not.be.null.and.to.not.be.undefined;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Content-Type header is 'text/xml'\", function () {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/xml\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Fine_tuning",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1ef2ca35-6e58-4af0-8d5b-05ae4175686f"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/fine-tune/upload/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fine-tune",
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "train uploaded fine-tuning files with file id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/fine-tune/train?file_id=file-7I82PYyNWNu9B8cp7uwWn5sE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fine-tune",
+						"train"
+					],
+					"query": [
+						{
+							"key": "file_id",
+							"value": "file-7I82PYyNWNu9B8cp7uwWn5sE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve status of model training",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/fine-tune/retrieve-status?file_id=ftjob-XvLMOKHzlEkJz5J6Ki5ZtwpY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fine-tune",
+						"retrieve-status"
+					],
+					"query": [
+						{
+							"key": "file_id",
+							"value": "ftjob-XvLMOKHzlEkJz5J6Ki5ZtwpY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate answer from fine tuned model",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/fine-tune/generate-answer/ft:gpt-3.5-turbo-0125:impelox-tech-pvt-ltd::9b7Ksdoa/?question=\"advantage of CNNS\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fine-tune",
+						"generate-answer",
+						"ft:gpt-3.5-turbo-0125:impelox-tech-pvt-ltd::9b7Ksdoa",
+						""
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "\"advantage of CNNS\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate answer from langgraph - SRAG",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/srag/generate/?question=\"what is degree audit?\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"srag",
+						"generate",
+						""
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "\"what is degree audit?\""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
